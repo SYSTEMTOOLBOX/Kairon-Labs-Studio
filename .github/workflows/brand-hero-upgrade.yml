@@ -24,34 +24,17 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-
           p = Path('index.html')
           s = p.read_text(encoding='utf-8')
-
           if 'class="heroBrand"' not in s:
-              brand_html = '''<div class="heroBrand" aria-label="Kairon Labs Studio"><div class="heroK">K</div><div class="heroBrandName">Kairon Labs</div><div class="heroBrandStudio">Studio</div><div class="heroBrandRule"></div></div>'''
+              brand_html = '<div class="heroBrand" aria-label="Kairon Labs Studio"><div class="heroK">K</div><div class="heroBrandName">Kairon Labs</div><div class="heroBrandStudio">Studio</div><div class="heroBrandRule"></div></div>'
               target = '<div class="heroRight reveal show"><div class="heroGlass">'
               replacement = '<div class="heroRight reveal show">' + brand_html + '<div class="heroGlass">'
               if target not in s:
                   raise SystemExit('Hero target not found')
               s = s.replace(target, replacement, 1)
-
-              css = r'''
-/* KAIRON HERO BRAND — foreground identity */
-.heroRight{min-height:560px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:22px;position:relative}
-.heroRight:before{content:"";position:absolute;width:min(44vw,520px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(231,184,62,.20),rgba(231,184,62,.05) 34%,transparent 66%);filter:blur(4px);pointer-events:none}
-.heroBrand{position:relative;z-index:3;text-align:center;display:grid;justify-items:center;filter:drop-shadow(0 24px 48px rgba(0,0,0,.55));animation:brandFloat 5.6s ease-in-out infinite}
-.heroK{font-size:clamp(9rem,15vw,14rem);font-weight:1000;font-style:italic;line-height:.63;letter-spacing:-.13em;padding-right:.12em;color:transparent;background:linear-gradient(145deg,#fff3aa 7%,#ffd25a 30%,#c7820c 63%,#6b3b00 88%);-webkit-background-clip:text;background-clip:text;text-shadow:0 0 48px rgba(231,184,62,.12)}
-.heroBrandName{margin-top:30px;font-size:clamp(1.55rem,2.6vw,2.8rem);line-height:1;font-weight:650;letter-spacing:.13em;text-transform:uppercase;color:#f5f0e5;text-shadow:0 0 24px rgba(255,245,210,.28)}
-.heroBrandStudio{margin-top:10px;padding-left:.52em;color:var(--gold2);font-size:.72rem;font-weight:900;letter-spacing:.52em;text-transform:uppercase}
-.heroBrandRule{width:min(270px,70%);height:1px;margin-top:18px;background:linear-gradient(90deg,transparent,var(--gold),transparent);box-shadow:0 0 18px rgba(231,184,62,.75)}
-.heroGlass{position:relative;z-index:3;margin:0}
-@keyframes brandFloat{50%{transform:translateY(-8px)}}
-@media(max-width:1050px){.heroGrid{grid-template-columns:1fr .78fr}.heroRight{min-height:500px}.heroK{font-size:clamp(8rem,16vw,11rem)}}
-@media(max-width:760px){.hero{padding:84px 0 58px}.heroGrid{grid-template-columns:1fr;padding-top:0;gap:14px}.heroRight{grid-row:1;min-height:355px;padding-top:8px}.heroCopy{grid-row:2;text-align:center}.heroRight:before{width:min(92vw,430px)}.heroK{font-size:clamp(9.5rem,39vw,12rem)}.heroBrandName{margin-top:24px;font-size:clamp(1.55rem,7vw,2.15rem);letter-spacing:.11em}.heroBrandStudio{font-size:.68rem;letter-spacing:.48em}.heroGlass{display:none}}
-@media(max-width:500px){.heroRight{min-height:325px}.heroK{font-size:10rem}.heroBrandName{font-size:1.65rem}.heroBrandStudio{font-size:.62rem}}
-'''
-              s = s.replace('</style>', css + '\n</style>', 1)
+              css = '/* KAIRON HERO BRAND */.heroRight{min-height:560px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:22px;position:relative}.heroRight:before{content:"";position:absolute;width:min(44vw,520px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(231,184,62,.20),rgba(231,184,62,.05) 34%,transparent 66%);filter:blur(4px);pointer-events:none}.heroBrand{position:relative;z-index:3;text-align:center;display:grid;justify-items:center;filter:drop-shadow(0 24px 48px rgba(0,0,0,.55));animation:brandFloat 5.6s ease-in-out infinite}.heroK{font-size:clamp(9rem,15vw,14rem);font-weight:1000;font-style:italic;line-height:.63;letter-spacing:-.13em;padding-right:.12em;color:transparent;background:linear-gradient(145deg,#fff3aa 7%,#ffd25a 30%,#c7820c 63%,#6b3b00 88%);-webkit-background-clip:text;background-clip:text;text-shadow:0 0 48px rgba(231,184,62,.12)}.heroBrandName{margin-top:30px;font-size:clamp(1.55rem,2.6vw,2.8rem);line-height:1;font-weight:650;letter-spacing:.13em;text-transform:uppercase;color:#f5f0e5;text-shadow:0 0 24px rgba(255,245,210,.28)}.heroBrandStudio{margin-top:10px;padding-left:.52em;color:var(--gold2);font-size:.72rem;font-weight:900;letter-spacing:.52em;text-transform:uppercase}.heroBrandRule{width:min(270px,70%);height:1px;margin-top:18px;background:linear-gradient(90deg,transparent,var(--gold),transparent);box-shadow:0 0 18px rgba(231,184,62,.75)}.heroGlass{position:relative;z-index:3;margin:0}@keyframes brandFloat{50%{transform:translateY(-8px)}}@media(max-width:1050px){.heroGrid{grid-template-columns:1fr .78fr}.heroRight{min-height:500px}.heroK{font-size:clamp(8rem,16vw,11rem)}}@media(max-width:760px){.hero{padding:84px 0 58px}.heroGrid{grid-template-columns:1fr;padding-top:0;gap:14px}.heroRight{grid-row:1;min-height:355px;padding-top:8px}.heroCopy{grid-row:2;text-align:center}.heroRight:before{width:min(92vw,430px)}.heroK{font-size:clamp(9.5rem,39vw,12rem)}.heroBrandName{margin-top:24px;font-size:clamp(1.55rem,7vw,2.15rem);letter-spacing:.11em}.heroBrandStudio{font-size:.68rem;letter-spacing:.48em}.heroGlass{display:none}}@media(max-width:500px){.heroRight{min-height:325px}.heroK{font-size:10rem}.heroBrandName{font-size:1.65rem}.heroBrandStudio{font-size:.62rem}}'
+              s = s.replace('</style>', css + '</style>', 1)
               p.write_text(s, encoding='utf-8')
           else:
               print('Brand upgrade already present')
