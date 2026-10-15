@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+# Sito anteprima: abilitare indicizzazione solo sul dominio definitivo.
