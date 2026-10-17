@@ -36,3 +36,8 @@ h1,h2,h3,h4{font-family:Cinzel,Georgia,serif;line-height:1.19;letter-spacing:-.0
 .hero-inner{grid-template-columns:minmax(0,1fr);min-height:0;padding:74px 0 78px;gap:0}
 .hero-inner>div:first-child{max-width:100%}
 }
+
+/* Sezione storia senza illustrazione non pertinente */
+.story .two.story-text-only{display:block;max-width:960px}
+.story .story-text-only .story-copy{margin:0 auto;max-width:850px}
+@media(max-width:760px){.story .two.story-text-only{max-width:none}}
