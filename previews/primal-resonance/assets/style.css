@@ -41,3 +41,88 @@ h1,h2,h3,h4{font-family:Cinzel,Georgia,serif;line-height:1.19;letter-spacing:-.0
 .story .two.story-text-only{display:block;max-width:960px}
 .story .story-text-only .story-copy{margin:0 auto;max-width:850px}
 @media(max-width:760px){.story .two.story-text-only{max-width:none}}
+
+
+/* October 2026 refresh: book cover, game work-in-progress and responsive navigation */
+:focus-visible{outline:2px solid #f4c983;outline-offset:4px}
+.nav-wip{font-size:.55rem;padding:2px 5px;margin-left:3px;border:1px solid #bc8d60a8;border-radius:3px;color:#f6c584;letter-spacing:.05em}
+.hero-inner{grid-template-columns:minmax(0,1.15fr) minmax(270px,.7fr);gap:48px;align-items:center}
+.hero-cover{position:relative;display:flex;flex-direction:column;align-items:center;isolation:isolate;width:min(325px,100%);justify-self:center}
+.hero-cover-glow{position:absolute;inset:12%;background:#d77030;filter:blur(75px);opacity:.28;z-index:-1}
+.hero-cover img{width:100%;height:auto;display:block;border:1px solid #b98c59;box-shadow:0 24px 65px #000c,9px 8px 0 #51321c;transform:rotate(2deg);transition:transform .5s}
+.hero-cover:hover img{transform:rotate(0deg) translateY(-4px)}
+.hero-cover-caption{font-size:.6rem;letter-spacing:.2em;text-align:center;text-transform:uppercase;color:#e8bd80;margin-top:25px}
+.hero-foot{gap:20px}
+.world-card img{height:122%;max-width:none;object-fit:cover;object-position:center top}
+.game-spotlight{padding:105px 0;background:radial-gradient(ellipse at 70% 20%,#57301c53,transparent 65%),#0b0908;border-block:1px solid #98684259}
+.game-spotlight-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.game-spotlight h2{font-size:clamp(2.15rem,4vw,4.1rem)}
+.game-progress{display:inline-block;padding:8px 12px;border:1px solid #b1805180;background:#33201386;color:#f3c88e;font-size:.7rem;font-weight:800;letter-spacing:.15em;margin:19px 0}
+.game-spotlight p{color:#d3c1ad;line-height:1.85}
+.game-lead{color:#f0dabe!important;font-size:1.12rem}
+.game-fine{color:#ac9783!important;font-size:.79rem}
+.game-spotlight-visual{min-height:440px;position:relative;display:flex;flex-direction:column;justify-content:center;padding:34px;border:1px solid #d2a16570;background:linear-gradient(180deg,#100a0822,#0c0908b4),url('bastione-panorama.webp') center/cover;box-shadow:0 25px 100px #0008}
+.game-spotlight-visual:after{content:"";position:absolute;inset:10px;border:1px solid #e8b47457;pointer-events:none}
+.game-screen-top,.game-screen-bottom{font:.67rem Manrope,sans-serif;color:#fae4c1;font-weight:800;letter-spacing:.13em;text-shadow:0 1px 9px #000}
+.game-screen-top span{display:inline-block;padding:5px 8px;border:1px solid #efcc9fba;margin:0 10px;background:#2c1b13a8}
+.game-screen-bottom{position:absolute;bottom:27px;right:24px;font-size:.57rem}
+.game-screen-heading{font:800 clamp(1.7rem,3vw,3.3rem)/1.3 Cinzel,Georgia,serif;text-shadow:0 3px 12px #000;max-width:90%;margin:auto 0;color:#f4e8d5}
+.game-screen-heading strong{color:#f5c78b}
+.footer-game{display:flex;justify-content:flex-end;gap:28px;padding-top:10px}
+.footer-game a{color:#e4ba89;font-size:.78rem;text-decoration:underline;text-underline-offset:4px}
+.game-hero{position:relative;padding:104px 0 92px;background:linear-gradient(90deg,#090806f3,#120d0bc9 66%,#1a0d0788),url('bastione-panorama.webp') center/cover}
+.game-hero h1{font-size:clamp(2.7rem,5vw,5rem);max-width:1010px}
+.game-hero p{max-width:780px}
+.game-hero-statline{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.game-hero-statline span{display:inline-block;padding:9px 12px;border:1px solid #ad7f526e;background:#20130dc9;color:#e3d0b7;font-size:.76rem}
+.game-hero-statline b{color:#f1c38a}
+.game-body{padding:95px 0 110px;background:radial-gradient(ellipse at 80% 30%,#32201b52,transparent 60%),#0c0b0a}
+.game-story{max-width:850px;margin:0 auto}
+.game-story h2{margin-top:17px}
+.game-story p{font-size:1.05rem;color:#d4c1ad;line-height:1.9}
+.game-roadmap{margin-top:98px}
+.game-mechanics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px;margin:34px 0}
+.game-mechanic{background:linear-gradient(150deg,#281810,#110e0b);border:1px solid #ac754a66;padding:27px}
+.mechanic-icon{font:800 2.5rem Cinzel,serif;color:#f3ba80}
+.game-mechanic h3{margin:15px 0 7px;font-size:1.13rem}
+.game-mechanic p{font-size:.92rem;line-height:1.8;color:#c5b09b}
+.game-stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin:36px 0}
+.game-stage{padding:24px 17px;background:linear-gradient(160deg,#2b1c14,#130f0c);border:1px solid #986c4c75}
+.game-stage:first-child{border-color:#ebbb81}
+.game-stage-number{font:800 2.7rem Cinzel,serif;color:#a57754}
+.game-stage h3{margin:16px 0 11px;font-size:1rem}
+.game-stage p{font-size:.86rem;color:#baa693;line-height:1.7}
+.game-stage .game-status{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:#e7b57c}
+.game-disclaimer{border-left:3px solid #e3b781;background:#23180f;padding:24px 29px;color:#d9c4af;line-height:1.8}
+.game-close{border:1px solid #bd8b5d79;padding:60px 25px;text-align:center;background:radial-gradient(ellipse at 50% 0,#60391a4a,#100d0b)}
+.game-close p{max-width:660px;margin:0 auto 22px;color:#cdb9a2}
+.game-close .btn-row{justify-content:center}
+@media(max-width:1180px){
+.nav{height:66px}
+.nav-wrap .mobile-nav-button{display:block}
+.nav-wrap .nav-links{display:none;position:absolute;left:0;right:0;top:66px;background:#100b0af7;border-bottom:1px solid #eeb9785c;padding:19px 22px;flex-direction:column;align-items:stretch;gap:14px}
+.nav-wrap .nav-links.open{display:flex}
+.nav-links a{font-size:.81rem}
+}
+@media(max-width:880px){
+.hero-inner{grid-template-columns:1fr;gap:33px}
+.hero-cover{width:min(300px,67vw)}
+.game-spotlight-grid{grid-template-columns:1fr;gap:45px}
+.game-spotlight-visual{min-height:370px}
+.game-stages{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+.nav-wrap .nav-links{top:62px}
+.hero-inner{grid-template-columns:minmax(0,1fr);gap:32px;padding:65px 0}
+.hero-cover{width:min(255px,74vw)}
+.hero h1{font-size:clamp(2.75rem,10.5vw,4.4rem)}
+.game-spotlight{padding:70px 0}
+.game-spotlight-visual{min-height:330px;padding:25px}
+.game-screen-heading{font-size:clamp(1.65rem,7vw,2.75rem)}
+.game-hero{padding:74px 0 65px}
+.game-body{padding:60px 0 80px}
+.game-stages,.game-mechanics{grid-template-columns:1fr}
+.game-roadmap{margin-top:65px}
+.footer-game{justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:400px){.hero-cover{width:min(225px,70vw)}.game-screen-bottom{font-size:.46rem}.game-spotlight-visual{min-height:290px}}
